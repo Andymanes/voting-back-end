@@ -1,6 +1,8 @@
-const express = require("express");
-
+const express = require('express');
+const apiCall = require('./controllers/api_call')
 const app = express()
+
+const PORT = process.env.PORT || 4000
 
 
 app.get('/', function(req, res) {
@@ -9,6 +11,10 @@ app.get('/', function(req, res) {
 
 
 
-app.listen(4000, function() {
-    console.log('Listening on port 4000')
+app.use('/test', apiCall)
+
+
+
+app.listen( PORT, ()=>{
+    console.log(`Listening at port ${PORT}`)
 })
