@@ -1,7 +1,7 @@
 const express = require('express');
 const apiCall = require('./controllers/api_call')
 const app = express()
-
+const apikey = process.env.API_KEY
 const PORT = process.env.PORT || 4000
 
 

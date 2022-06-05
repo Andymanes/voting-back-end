@@ -1,8 +1,17 @@
 const express = require('express')
 const router = express.Router()
+const fetch = require('node-fetch')
 
 router.get('/', function(req, res, next) {
-    res.send('API is working')
+    const URL = `https://api.propublica.org/congress/v1/115/senate/members.json`
+    const options = {
+        header: {
+            'X-API-Key': `ugWVCNHEaD2T3iLIeMniDGwdVrkrOuTKhm75mmxK`
+        }
+    }
+    fetch(URL, options).then(resp=>resp.json()).then(data=>res.send(data)).catch(err=>res.send(err))
 })
+    
+
 
 module.exports = router
