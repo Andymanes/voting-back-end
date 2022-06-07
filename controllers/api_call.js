@@ -5,7 +5,8 @@ const fetch = require('node-fetch')
 router.get('/', function(req, res, next) {
     const URL = `https://api.propublica.org/congress/v1/115/senate/members.json`
     const options = {
-        header: {
+        headers: {
+            'Content-type': 'application/json',
             'X-API-Key': `ugWVCNHEaD2T3iLIeMniDGwdVrkrOuTKhm75mmxK`
         }
     }
