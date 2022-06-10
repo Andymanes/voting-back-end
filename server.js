@@ -1,6 +1,6 @@
 const express = require('express');
-const apiCall = require('./controllers/api_call')
-const test = require('./controllers/test')
+const senate = require('./controllers/senate')
+const house = require('./controllers/house')
 const app = express()
 const apikey = process.env.API_KEY
 const PORT = process.env.PORT || 4000
@@ -11,9 +11,9 @@ app.get('/', function(req, res) {
 })
 
 app.use(cors());
-app.use('/test', test)
+app.use('/house', house)
 
-app.use('/api', apiCall)
+app.use('/senate', senate)
 
 
 

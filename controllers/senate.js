@@ -3,7 +3,7 @@ const router = express.Router()
 const fetch = require('node-fetch')
 
 router.get('/', function(req, res, next) {
-    const URL = `https://api.propublica.org/congress/v1/115/senate/members.json`
+    const URL = `https://api.propublica.org/congress/v1/117/senate/members.json`
     const options = {
         headers: {
             'Content-type': 'application/json',
